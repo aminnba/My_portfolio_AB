@@ -1,0 +1,155 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Excel Projects | Amine</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper" class="fade-in">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">Back to Portfolio</a>
+					</header>
+
+				<!-- Main -->
+					<div id="main">
+
+						<section>
+
+							<article style="max-width: 900px; margin: auto; text-align: center;">
+     <header>
+         <span class="date">March 2025</span>
+    <h2>Transfer Market Excel Analysis</h2>
+     </header>
+<div>
+        <a class="image fit" href="#" ><img src="images/main_data.PNG" alt="Top 5 Transfers" /></a>
+              <p style="text-align: left; font-size: 1rem; line-height: 1.6; padding: 10px;">
+    I started by working in the <strong>Countries</strong> sheet, where I used Excel’s <strong>Text-to-Columns</strong> tool to split data based on commas. I selected the <em>Delimited</em> option and set the delimiter as a comma.
+    <br><br>
+    After splitting the values, I cleaned up the continent names by removing extra spaces. I first made a copy of the list, then used the <strong>Remove Duplicates</strong> feature to simplify it. To clean up the text further, I used Excel’s <strong>Find and Replace</strong> to eliminate unwanted spaces at the start of each continent name.
+    <br><br>
+    Once that was done, I moved to the <strong>Database</strong> sheet. I applied filters to the table and started exploring the <strong>Season</strong> column for the 2022/2023 data.
+  </p> 
+
+</div>
+
+<hr style="border: none; border-top: 2px solid grey; margin: 0 20px;;padding: 20px" />
+
+<div>
+  <a class="image fit" href="#" ><img src="images/europe_transfers.PNG" alt="Europe transfers" /></a>
+           <p style="text-align: left; font-size: 1rem; line-height: 1.6; padding: 10px;">
+    To create this table, I used Excel’s <strong>SUMIFS</strong> function to pull transfer data based on multiple criteria. I focused on transfers during the <strong>2021/2022</strong> and <strong>2022/2023</strong> seasons, and filtered results specifically for the <strong>Europe</strong> continent.
+    <br><br>
+    While working on the <em>‘Transfers outgoing’</em> row, I made sure to:
+    <br><br>
+    Point the formula to the correct column for outgoing/Incoming transfers.
+    </p>
+
+</div>
+<hr style="border: none; border-top: 2px solid grey; margin: 0 20px;;padding: 20px" />
+
+<div style="max-width: 900px; margin: auto; text-align: left;">
+  <a class="image fit" href="images/europe_transfers_per_country.PNG" target="_blank">
+    <img src="images/europe_transfers_per_country.PNG" alt="European Transfers by Country" />
+  </a>
+  <p style="text-align: left; font-size: 1rem; line-height: 1.6; padding: 10px;">
+    In this part of the project, I wanted to take things a step further by building a more detailed table. The goal was to break down the number of player transfers and their financial value — both <strong>incoming</strong> and <strong>outgoing</strong> — for each European country.
+    <br><br>
+    I began by heading to the <strong>Countries</strong> sheet, applying a filter to show only <strong>European countries</strong>, then copied that list into a new sheet I created called <em>European Transfers by Country</em>. That formed the base structure for the table.
+    <br><br>
+    I used the <strong>SUMIFS</strong> function again here to calculate totals based on two criteria: <em>continent = Europe</em> and <em>season</em>. When calculating the outgoing transfers, I made sure to:
+    <ul style="text-align: left;">
+      <li >Point to the appropriate 'outgoing' columns in the database.</li>
+      <li>Use a minus sign in the formula to reflect outgoing movement correctly.</li>
+    </ul>
+    One thing I paid close attention to was how I <strong>locked cell references</strong> when setting up the formulas — that helped me reuse the same formulas efficiently as I moved across the table.
+    <br><br>
+    After finalizing the numbers for the <strong>2021/2022 season</strong>, I simply duplicated the same formulas for the <strong>2022/2023 season</strong>, updating only the relevant season value.
+  </p>
+</div>
+
+<hr style="border: none; border-top: 2px solid grey; margin: 0 20px;;padding: 20px" />
+
+<div style="max-width: 900px; margin: auto; text-align: left;">
+  <a class="image fit" href="images/europe_top_5_countries.PNG" target="_blank">
+    <img src="images/europe_top_5_countries.PNG" alt="Top 5 European Countries by Transfer Spending" style="max-width: 100%; height: auto; border-radius: 10px; text-align: center;" />
+  </a>
+  <p style="text-align: left; font-size: 1rem; line-height: 1.6; padding: 10px;">
+    To highlight the biggest spenders in European football, I used the <strong>RANK</strong> function to identify the top five countries based on their <em>incoming transfer value</em>. The function compares each country's value to the entire range, giving us a quick look at who spent the most. Unsurprisingly, <strong>England, Italy, France, Germany, and Spain</strong> came out on top.
+    <br><br>
+    With those five selected, I moved to a new sheet called <em>Visualization Top 5 Countries</em> to organize data for a chart. I created a table where I:
+    <ul style="padding-left: 20px;">
+      <li>Used <strong>SUMIF</strong> to get the total number of incoming transfers per country.</li>
+      <li>Calculated the <strong>average transfer fee</strong> by dividing the total incoming value by the number of transfers.</li>
+    </ul>
+    This made it clear that English clubs weren’t just doing the most transfers — they were also spending <strong>over $2 million per transfer</strong> on average.
+    <br><br>
+    To visualize the comparison, I created a combo chart. Since transfer volume and average fees use different scales, I added a <strong>secondary axis</strong> to show both clearly. I then:
+    <ul style="padding-left: 20px;">
+      <li>Plotted the transfer count as columns.</li>
+      <li>Plotted the average transfer fee as a line.</li>
+      <li>Changed the chart style, removed the border, added a transparent background, and adjusted the font for a cleaner look.</li>
+    </ul>
+     <a class="image fit" href="images/chart.png" target="_blank">
+    <img src="images/chart.png" alt="Top 5 European Countries by Transfer Spending" style="max-width: 100%; height: auto; border-radius: 10px; text-align: center;" />
+  </a>
+    The final chart tells the full story at a glance — showing not just who spends the most, but also how much each transfer is really costing them.
+  </p>
+</div>
+
+  <hr style="border: none; border-top: 1px solid grey; margin: 0 20px;" />
+
+</article>
+
+<div style="max-width: 900px; margin: auto; text-align: center;">
+  <h2 style="margin-top: 30px;">🔚 Conclusion</h2>
+  <p style="text-align: left; font-size: 1rem; line-height: 1.6; padding: 10px;">
+    This project gave me the chance to dive deep into Excel and use it as a real analytical tool — not just for simple calculations, but for building meaningful insights from raw data.
+    <br><br>
+    I started with raw transfer data and used tools like <strong>Text-to-Columns</strong>, <strong>Find and Replace</strong>, and <strong>filters</strong> to clean and prepare the dataset. Then, I applied functions like <strong>SUMIF</strong>, <strong>SUMIFS</strong>, and <strong>RANK</strong> to break down the data by seasons, continents, and countries.
+    <br><br>
+    I created multiple summary tables to analyze transfers in and out of Europe, as well as transfers by individual countries. Finally, I used Excel’s charting tools to bring everything together into a clear and visually engaging comparison of the top 5 European spenders.
+    <br><br>
+    📘 <strong>What I learned:</strong>
+    
+      <p>- How to clean messy data and structure it for analysis.</p>
+      <p>- How to use conditional formulas like SUMIFS to filter values based on multiple criteria.</p>
+      <p>- How to organize and present data visually with combo charts and secondary axes.</p>
+      <p>- How to analyze and compare trends across different seasons and dimensions.</p>
+    
+    Overall, this project helped me strengthen my Excel skills and better understand how to turn raw sports data into useful insights. I'm proud of how the final result turned out — clean, clear, and packed with valuable information.
+  </p>
+  <ul class="actions special">
+    <li><a href="index.html" class="button">Back to the portfolio</a></li>
+  </ul>
+</div>
+
+
+							<!-- Add more Excel projects here if needed -->
+
+						</section>
+
+					</div>
+
+				<!-- Footer -->
+					
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
